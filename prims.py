@@ -1,24 +1,72 @@
 import numpy as np
 from manim import *
-
-class DirectedWeightedGraph(Scene):
+from manim_pptx import PPTXScene
+class DirectedWeightedGraph(PPTXScene):
     def construct(self):
+        self.begin()
         self.makeGraph()
-        self.wait(3)
         self.startPrims()
+        self.psuedoAlgo()
 
+    def psuedoAlgo(self):
+        text1 = Tex(r"PSEUDOCODE: ", color=BLUE, font_size=30).move_to(3 * UP + 5 * LEFT)
+        text2 = Tex(r"H = \{ S \}", color=WHITE, font_size=30).move_to(2.3 * UP + 5.5 * LEFT)
+        text3 = Tex(r"WHILE (ALL VERTICES ARE NOT ADDED IN H)", color=WHITE, font_size=30).move_to(
+            1.8 * UP + 2.5 * LEFT)
+        text4 = Tex(r"\{", color=WHITE, font_size=30).move_to(1.3 * UP + 6.1 * LEFT)
+        text5 = Tex(r"(U,V) $\leftarrow$  $\min_{\scriptscriptstyle  (U,V): U \in H , V \in Y} \{ W(U,V) \} $",
+                    color=WHITE, font_size=30).move_to(0.8 * UP + 2.5 * LEFT)
+        text6 = Tex(r"REMOVE V FROM Y AND ADD IT TO H", color=WHITE, font_size=30).move_to(0.3 * UP + 1.9 * LEFT)
+        text7 = Tex(r"ADD (U,V) TO TREE", color=WHITE, font_size=30).move_to(0.2 * DOWN + 3.4 * LEFT)
+        text8 = Tex(r"\}", color=WHITE, font_size=30).move_to(0.7 * DOWN + 6.1 * LEFT)
+        text9 = Tex(r"RUNNING TIME: ", color=BLUE, font_size=30).move_to(1.7 * DOWN + 5 * LEFT)
+        text10 = Tex(r"O((m+n)logn)", color=WHITE, font_size=30).move_to(1.7 * DOWN + 2.5 * LEFT)
+        self.play(Write(text1), Write(text2), Write(text3), Write(text4), Write(text5), Write(text9), Write(text10),
+                  Write(text6), Write(text7), Write(text8))
+        self.wait(3)
+
+
+    def begin(self):
+        text1 = Tex(r"PRIM'S ALGORITHM ", color=BLUE, font_size=40)
+        self.play(Write(text1))
+        self.play(text1.animate.shift(3 * UP + 5 * LEFT))
+        text2 = Tex(r"PROBLEM STATEMENT: ", color=BLUE, font_size=30).move_to(2 * UP + 5.25 * LEFT)
+        self.play(Write(text2))
+        text3 = Tex(
+            r"$\bullet$ GIVEN   AN   UNDIRECTED   AND   WEIGHTED   GRAPH   G,   FIND   A   CONNECTED   SUBGRAPH   OF   G   OF   MINIMUM   WEIGHT",
+            color=WHITE, font_size=20).move_to(1 * UP + 3.5 * LEFT)
+        text4 = Tex(
+            r"$\bullet$ FIND     A     SUBGRAPH     H    WHICH     HAS   $\text{MIN}_{\scriptscriptstyle   H \subseteq G} \{ WT(H) \}$ ,    WHERE     WT(H)= $\Sigma_{e \in H} \{ WT(e) \}$",
+            color=WHITE, font_size=20).move_to(3.5 * LEFT)
+        self.play(FadeIn(text3), FadeIn(text4))
+        self.wait(3)
+        group=Group(text2,text3,text4,text1)
+        self.play(FadeOut(group))
     def startPrims(self):
         self.group.scale(0.6)
         self.play(self.group.animate.shift(4.5*LEFT))
         #self.wait(3)
         ellipse1 = Ellipse(
             width=3.0, height=5.0 ,stroke_width=7
-        ).move_to(LEFT)
+        ).move_to(LEFT+0.8*UP)
         ellipse1.set_color(color=WHITE)
-        ellipse2 = ellipse1.copy().set_color(color=WHITE).move_to(3*RIGHT)
+        ellipse2 = ellipse1.copy().set_color(color=WHITE).move_to(3*RIGHT+0.8*UP)
         ellipse_group = Group( ellipse1, ellipse2).move_to(RIGHT * 3)
         self.play(FadeIn(ellipse_group))
-        #self.wait(3)
+        mainIdea = Tex(
+            r"OUR IDEA: BE GREEDY, FIND THE MINIMUM WEIGHT EDGE FROM H $ \rightarrow $ Y, SAY (U,V) THEN PULL V INTO H.",
+            color=WHITE, font_size=20, tex_to_color_map={"OUR IDEA:": BLUE}).shift(3.2 * UP + 2 * RIGHT)
+        # self.wait(3)
+
+        bottomText1 = Tex(
+            r"H IS SUBGRAPH THAT WE ARE MAKING",
+            color=WHITE, font_size=20).shift(2.7 * DOWN + 1* RIGHT)
+        # self.wait(3)
+        bottomText2 = Tex(
+            r"Y",
+            color=WHITE, font_size=20).shift(2.7 * DOWN + 5 * RIGHT)
+        self.play(Write(bottomText1), Write(bottomText2), Write(mainIdea))
+        textGroup=Group(mainIdea,bottomText1,bottomText2)
         node_S = Dot(point=np.array([1, 2, 0]))
         node_A = Dot(point=np.array([4, 1, 0]))
         node_C = Dot(point=np.array([4, -1, 0]))
@@ -67,6 +115,7 @@ class DirectedWeightedGraph(Scene):
         self.play(Create(edge6))
         self.edge3.set_color(color=GREEN)
         self.wait(1)
+        edgeGroup=Group(edge1,edge2,edge3,edge4,edge5,edge6)
         mstGroup=Group(self.edge1.copy(),self.edge4.copy(),self.edge5.copy(),self.edge7.copy(),self.edge8.copy(),self.edge3.copy(),self.node_A.copy(),self.node_B.copy(),self.node_C.copy(),self.node_D.copy(),self.node_E.copy(),self.node_T.copy(),self.weight_label1.copy(),self.weight_label4.copy(),self.weight_label5.copy(),self.weight_label7.copy(),self.weight_label8.copy(),self.weight_label3.copy(),self.wnode1.copy(),self.wnode2.copy(),self.wnode3.copy(),self.wnode4.copy(),self.wnode6.copy(),self.wnode5.copy(),self.wnode7.copy())
         self.play(mstGroup.animate.shift(3*DOWN))
         self.edge3.set_color(color=WHITE)
@@ -76,10 +125,8 @@ class DirectedWeightedGraph(Scene):
         self.edge4.set_color(color=WHITE)
         self.edge1.set_color(color=WHITE)
         self.play(self.group.animate.shift(1* UP))
-
-
-
         self.wait(3)
+        self.play(FadeOut(mstGroup),FadeOut(self.group),FadeOut(edgeGroup),FadeOut(node_group),FadeOut(ellipse_group),FadeOut(textGroup))
 
     def makeGraph(self):
         self.node_S = Dot(point=np.array([-3, 1, 0]))
@@ -134,3 +181,66 @@ class DirectedWeightedGraph(Scene):
                   Write(self.wnode6), Write(self.wnode7))
 
 
+class BeginSlide(Scene):
+
+    def construct(self):
+        self.test()
+
+    def test(self):
+        text1 = Tex(r"PRIM'S ALGORITHM ", color=BLUE, font_size=40)
+        self.play(Write(text1))
+        self.play(text1.animate.shift(3*UP+5*LEFT))
+        text2 = Tex(r"PROBLEM STATEMENT: ", color=BLUE, font_size=30).move_to(2*UP+5.25*LEFT)
+        self.play(Write(text2))
+        text3 = Tex(r"$\bullet$ GIVEN   AN   UNDIRECTED   AND   WEIGHTED   GRAPH   G,   FIND   A   CONNECTED   SUBGRAPH   OF   G   OF   MINIMUM   WEIGHT", color=WHITE, font_size=20).move_to(1*UP+3.5*LEFT)
+        text4 = Tex(r"$\bullet$ FIND     A     SUBGRAPH     H    WHICH     HAS   $\text{MIN}_{\scriptscriptstyle   H \subseteq G} \{ WT(H) \}$ ,    WHERE     WT(H)= $\Sigma_{e \in H} \{ WT(e) \}$", color=WHITE, font_size=20).move_to(3.5*LEFT)
+        self.play(FadeIn(text3),FadeIn(text4))
+
+        self.wait(3)
+class PrimAlgorithm(Scene):
+
+    def construct(self):
+        self.test()
+
+    def test(self):
+        text1=Tex(r"PSEUDOCODE: ",color=BLUE, font_size=30).move_to(3*UP+5*LEFT)
+        text2 = Tex(r"H = \{ S \}", color=WHITE, font_size=30).move_to(2.3*UP+5.5*LEFT)
+        text3 = Tex(r"WHILE (ALL VERTICES ARE NOT ADDED IN H)", color=WHITE, font_size=30).move_to(1.8*UP+2.5*LEFT)
+        text4 = Tex(r"\{", color=WHITE, font_size=30).move_to(1.3*UP+6.1*LEFT)
+        text5 = Tex(r"(U,V) $\leftarrow$  $\min_{\scriptscriptstyle  (U,V): U \in H , V \in Y} \{ W(U,V) \} $", color=WHITE, font_size=30).move_to(0.8*UP+2.5*LEFT)
+        text6 = Tex(r"REMOVE V FROM Y AND ADD IT TO H", color=WHITE, font_size=30).move_to(0.3*UP+1.9*LEFT)
+        text7 = Tex(r"ADD (U,V) TO TREE", color=WHITE, font_size=30).move_to(0.2*DOWN+3.4*LEFT)
+        text8 = Tex(r"\}", color=WHITE, font_size=30).move_to(0.7 * DOWN + 6.1 * LEFT)
+        text9 = Tex(r"RUNNING TIME: ", color=BLUE, font_size=30).move_to(1.7* DOWN + 5 * LEFT)
+        text10 = Tex(r"O((m+n)logn)", color=WHITE, font_size=30).move_to(1.7 * DOWN + 2.5* LEFT)
+        self.play(Write(text1),Write(text2),Write(text3),Write(text4),Write(text5),Write(text9),Write(text10), Write(text6),Write(text7),Write(text8))
+        #text_object=VGroup(text1,text2,text3,text4,text5).arrange(DOWN,buff=0.1)
+        #self.play(FadeIn(text_object))
+        self.wait(3)
+        # text1= Tex(
+        #     r"PSEUDOCODE \\\\ H = \{ S \}"
+        #     # r"WHILE (ALL VERTICES ARE NOT ADDED IN H) \n"
+        #     # r"{"
+        #     # r"\left(U < V\right) \rightarrow \min_{(U,V): U \in H, V \in Y} W_{U,V} \n"
+        #     # r"REMOVE V FROM Y AND ADD IT TO H \n"
+        #     # r"ADD (U,V) TO TREE \n"
+        #     # r"}"
+        #     ,
+        #     color=WHITE, font_size=20)
+        # self.play(Write(mainIdea))
+        # self.wait(3)
+
+
+        # mainIdea = Tex(
+        #     r"OUR IDEA: BE GREEDY, FIND THE MINIMUM WEIGHT EDGE FROM H $ \rightarrow $ Y, SAY (U,V) THEN PULL V INTO H.",
+        #     color=WHITE, font_size=20,tex_to_color_map={"OUR IDEA:":BLUE}).shift(3.2 * UP + 2 * RIGHT)
+        # # self.wait(3)
+        #
+        # bottomText1 = Tex(
+        #     r"H IS SUBGRAPH THAT WE ARE MAKING",
+        #     color=WHITE, font_size=20).shift(2.7 * DOWN + 0.5 * RIGHT)
+        # # self.wait(3)
+        # bottomText2 = Tex(
+        #     r"Y",
+        #     color=WHITE, font_size=20).shift(2.7 * DOWN + 5* RIGHT)
+        # self.play(Write(bottomText1), Write(bottomText2),Write(mainIdea))

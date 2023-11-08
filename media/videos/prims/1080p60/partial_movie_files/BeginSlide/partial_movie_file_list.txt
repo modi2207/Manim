@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:E:/IIT_GN/1st_sem/Algorithms/Manim/media/videos/prims/1080p60/partial_movie_files/BeginSlide/1413466013_1537694357_223132457.mp4'
+file 'file:E:/IIT_GN/1st_sem/Algorithms/Manim/media/videos/prims/1080p60/partial_movie_files/BeginSlide/1672018281_1914730461_547276579.mp4'
+file 'file:E:/IIT_GN/1st_sem/Algorithms/Manim/media/videos/prims/1080p60/partial_movie_files/BeginSlide/1672018281_231221088_961670970.mp4'
+file 'file:E:/IIT_GN/1st_sem/Algorithms/Manim/media/videos/prims/1080p60/partial_movie_files/BeginSlide/1672018281_3732509654_1688148138.mp4'
+file 'file:E:/IIT_GN/1st_sem/Algorithms/Manim/media/videos/prims/1080p60/partial_movie_files/BeginSlide/1672018281_3073779459_1496550049.mp4'
