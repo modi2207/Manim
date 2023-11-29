@@ -1,0 +1,120 @@
+{
+  "slides": [
+    {
+      "type": "slide",
+      "start_animation": 0,
+      "end_animation": 2,
+      "number": 1
+    },
+    {
+      "type": "slide",
+      "start_animation": 2,
+      "end_animation": 6,
+      "number": 2
+    },
+    {
+      "type": "slide",
+      "start_animation": 6,
+      "end_animation": 8,
+      "number": 3
+    },
+    {
+      "type": "slide",
+      "start_animation": 8,
+      "end_animation": 12,
+      "number": 4
+    },
+    {
+      "type": "slide",
+      "start_animation": 12,
+      "end_animation": 15,
+      "number": 5
+    },
+    {
+      "type": "slide",
+      "start_animation": 15,
+      "end_animation": 18,
+      "number": 6
+    },
+    {
+      "type": "slide",
+      "start_animation": 18,
+      "end_animation": 21,
+      "number": 7
+    },
+    {
+      "type": "slide",
+      "start_animation": 21,
+      "end_animation": 24,
+      "number": 8
+    },
+    {
+      "type": "slide",
+      "start_animation": 24,
+      "end_animation": 27,
+      "number": 9
+    },
+    {
+      "type": "slide",
+      "start_animation": 27,
+      "end_animation": 30,
+      "number": 10
+    },
+    {
+      "type": "slide",
+      "start_animation": 30,
+      "end_animation": 34,
+      "number": 11
+    },
+    {
+      "type": "last",
+      "start_animation": 34,
+      "end_animation": 37,
+      "number": 12
+    }
+  ],
+  "files": [
+    "slides\\files\\DirectedWeightedGraph\\1413466013_1537694357_223132457.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_1914730461_547276579.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_231221088_961670970.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3732509654_1688148138.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3073779459_1496550049.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_478144441_230770454.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2629473859_4174018169.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_1213049366_2587163473.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3651006060_4067559736.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3764239528_4066747522.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2681259877_842588770.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3489918420_3576397233.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_1021370888.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2362940578_808248942.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3764092376_564568567.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_3292010122.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3143446978_2659121845.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2227542093_1575017611.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_1786450827.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2441116680_2288200621.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3947565921_2698438309.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_1528770183.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2118134822_286293216.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_1952857588_1901035689.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_1205906230.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3684392428_2681626893.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_1420189981_4187694069.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_1855041654.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3940200126_215176903.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3792164813_3576426032.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_345352296_4272151304.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2275546039_3039109855.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_1971306880_3468644369.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3073779459_511438705.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3689568227_1379477743.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_2207558667_3188614134.mp4",
+    "slides\\files\\DirectedWeightedGraph\\1672018281_3073779459_413486442.mp4"
+  ],
+  "resolution": [
+    1920,
+    1080
+  ],
+  "background_color": "black"
+}
